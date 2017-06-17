@@ -1,2 +1,2 @@
 # Coursera-Exercises
-Coursera exercises from different courses
+Coursera exercises from different courses.
