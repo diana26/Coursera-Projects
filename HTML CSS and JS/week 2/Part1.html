@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body onload = "do_game()">
+	<script>
+		var colors = ["blue", "brown",  "gray", "green" "indigo", "orange", "red", "violet", "white", "yellow"];
+		var finished = false;
+		var target;
+		var guess;
+		var count = 0;
+		function do_game()
+		{
+			var target_index = Math.random() * 11;
+			target_index = Math.floor(target_index);
+			console.log(target_index);
+			target = colors[target_index];
+			
+			while(!finished)
+			{
+				guess = prompt("I am thinking on one of these colors:\n\nblue, brown, gray, green, indigo, orange, red, violet,  white, yellow.\n\nThe target is: " + target);
+				count = count + 1;
+				if (guess == target)
+				{
+					finished = true;
+				}
+                
+			}
+			
+		}
+	</script>
+</body>
+</html>

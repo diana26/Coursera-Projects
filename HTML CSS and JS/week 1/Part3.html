@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+      
+        <head>
+        <style>
+            h1{ 
+                font-size: 120%;}
+    fieldset  {
+            background:lightyellow;
+            border: 10px solid yellow;
+            margin-bottom: 10px;
+                width: 720px}
+        
+    label {
+            display: inline-block;
+             text-align: right; 
+            text-align: right; 
+            width:180px; 
+            vertical-align: top}
+           
+    .radiocheck{
+                width: auto}
+            
+    .range{ 
+            text-align: center;
+                vertical-align: top;
+                padding: 3px 10px;
+            }
+            
+    textarea{ 
+             width: 360px;
+            height:50px;
+            }
+    .range-low{ 
+            color:white;
+            background: brown;
+            }
+            
+    .range-high{ 
+            color:white;
+            background: purple;
+            }
+            
+    label:hover { 
+            font-size:40px 
+            }
+            
+    input:hover { 
+            font-size:24px} 
+            
+        </style>
+            </head>
+        <body>
+            <h1> Please enter your Details for our Dating Website!
+            </h1>
+            <form action= "http://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="get"  enctype="multipart/form-data">
+<fieldset>
+        <legend> Your face </legend>
+            <label for="filetoUpload"> Your image:</label> 
+                <input type="file" name="filetoUpload" id="filetoUpload"required><br><br>
+            <label for="preview">Image preview:</label>
+                <img src="" id="preview" width="200" name="preview">
+</fieldset>
+        
+<fieldset>
+        <legend>Your general details</legend>
+            <label for="name">Name:</label>
+            <input type="text"  name="name" id="name"required> <br><br>
+            <label for="gender">Gender:</label>
+            <input type="radio" value="Male" name="gender" id="gender" required > 
+             <label for="male" class="radiocheck"> Male</label>
+            <input type="radio" value="Female" name="gender" id="gender" required > 
+            <label for="female" class="radiocheck"> Female</label>
+            <br></required>
+            <label for="age">Age: </label>
+        <input type="number" min="0" max="100" name="age" id="age"required><br><br>
+        <label for="dateofBirth">Date of birth:</label>
+        <input type="date" iname="dateofBirth" id="dateofBirth"><br><br>
+        <label for="yourfavoriteColor">Favorite color: </label>
+        <input type="color" name="yourfavoriteColor" id="yourfavoriteColor"><br><br>
+        <label for="country"> Which country</label>
+                <select>
+        <option value="No selection" name="country" id="country"> No selection</option>
+        <option value="Mexico" name="country" id="country"> Mexico</option>
+        <option value="Spain" name="country" id="country"> Spain</option>
+        <option value="USA" name="country" id="country"> USA</option>
+        <option value="Brazil" name="country" id="country"> Brazil</option>
+        <option value="Canada" name="country" id="country">Canada</option>
+                </select>
+</fieldset> 
+            
+<fieldset > 
+        
+        <legend>Your indicators</legend>
+            <label for="height">Height:</label><span class="range range-low"> Short</span><input type="range" min="0" max="100" name="height" id="height">
+                <span class="range range-high"> Tall </span><br><br>
+            
+            <label for="salary">Salary:</label><span class="range range-low">  Poor</span> <input type="range" min="0" max="100" name="salary" id="salary">
+                <span class="range range-high"> Rich</span><br><br>
+</fieldset>
+
+<fieldset > 
+        <legend> Your contact information</legend>
+            <label for="email"> Email:</label><input type="email" name="email" id="email" required><br><br>
+            <label for="mobile"> Mobile:</label><input type="tel" name="mobile" id="mobile" required><br><br>
+            <label for="adress"> Address:</label><textarea name="address" id="address"></textarea><br><br>
+            <label for="method"> Method to contact you:</label>
+        <input type="checkbox" id="method" name="method"><label for="method" class="radiocheck"> Email</label>
+         <input type="checkbox" id="method" name="method"><label for="method" class="radiocheck"> Whatsapp</label>
+         <input type="checkbox" id="method" name="method"><label for="method" class="radiocheck"> In-app chat</label>
+</fieldset><br>
+  
+            <input type=submit name="submit">
+            
+            </form>
+        <script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js"></script>
+            </body>                                                       
+</html>
