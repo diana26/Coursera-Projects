@@ -1,0 +1,17 @@
+var img = new SimpleImage("duke_blue_devil.png");
+print (img);
+function changeColor (pix){
+    var oneRed = pix.getRed();
+    var oneGreen = pix.getGreen();
+    var oneBlue = pix.getBlue();
+      if (oneRed != 255  && oneGreen != 255 && oneBlue != 0){
+                pix.setRed(255);
+                pix.setGreen(255);
+                pix.setBlue(0);
+        }
+        return pix;
+}
+for (var pix of img.values()){
+          changeColor (pix);
+            }
+print (img);

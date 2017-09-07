@@ -1,0 +1,17 @@
+var img = new SimpleImage ("drewRobert.png");
+print (img);
+var imgtwo = new SimpleImage("dinos.png");
+var Newimg = new SimpleImage(img.getWidth(), img.getHeight());
+
+    for (var pix of img.values()){
+        if (pix.getGreen() > 240){
+            var x = pix.getX();
+            var y = pix.getY();
+            var imgtwoPixel = imgtwo.getPixel(x,y);
+            Newimg.setPixel(x, y, imgtwoPixel);
+        }
+        else {
+            Newimg.setPixel(pix.getX(), pix.getY(), pix);
+        }
+    }
+    print (Newimg);
