@@ -1,0 +1,26 @@
+.one{
+    color: blue;    
+    font-size: 14pt;
+  text-align: center;
+}
+.two{
+  font-size: 16pt;
+  text-align: center;
+  
+}
+
+  .fieldset  { 
+            background:lightblue; 
+            border: 5px solid black; 
+            margin-bottom: 10px; 
+               width: 560px;
+            font-size: 15pt;
+            color: purple;
+           position:absolute;
+           left:30%;
+           top:50%;
+        
+            
+}
+  
+}
