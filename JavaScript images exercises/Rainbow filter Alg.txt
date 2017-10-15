@@ -1,0 +1,180 @@
+var img = new SimpleImage('smalllion.jpg');
+
+
+for(var pix of img.values()){
+  
+  var avg = (pix.getRed() + pix.getBlue() + pix.getGreen())/3;
+  
+      if(pix.getY() <= img.getHeight()/7){
+     
+   	if(avg < 128){
+         
+     pix.setRed(2*avg);
+        
+      pix.setBlue(0);
+       
+       pix.setGreen(0);
+      
+  }
+    
+ if(avg >= 128 ){
+          
+    pix.setRed(255);
+  
+            pix.setGreen((1.2*avg)-51);
+   
+           pix.setBlue((2*avg) - 255);   
+ 
+    }
+        
+ 
+   }
+   
+ if (pix.getY() > img.getHeight()/7 && pix.getY() <= img.getHeight() /3.5){
+ 
+       if(avg < 128){
+      
+       pix.setRed(2*avg);
+   
+          pix.setGreen(0.8*avg);
+     
+        pix.setBlue(0);  
+      
+  }
+       
+ if(avg >= 128){
+       
+      pix.setRed(255);
+      
+       pix.setGreen((1.2*avg)-51);
+      
+       pix.setBlue((2*avg)-255); 
+     
+   }
+        
+
+    }
+   
+ if(pix.getY() > img.getHeight()/3.5 && pix.getY() <= img.getHeight() /2.33){
+   
+      if(avg < 128){
+          
+   pix.setRed(2*avg);
+       
+      pix.setGreen(2*avg);
+      
+       pix.setBlue(0);  
+      
+  }
+       
+  if(avg >= 128){
+    
+         pix.setRed(255);
+  
+           pix.setGreen(255);
+   
+          pix.setBlue((2*avg)-255); 
+    
+    }
+  
+  }
+   
+ if(pix.getY() > img.getHeight()/2.33 && pix.getY() <= img.getHeight() /1.75){
+  
+      if(avg < 128){
+        
+     pix.setRed(0);
+       
+      pix.setGreen(2*avg);
+     
+        pix.setBlue(0);  
+      
+  }
+     
+    if(avg >= 128){
+         
+    pix.setRed((2*avg)-255);
+    
+         pix.setGreen(255);
+      
+       pix.setBlue((2*avg)-255); 
+    
+    }
+ 
+   }
+  
+  if(pix.getY() > img.getHeight()/1.75 && pix.getY() <= img.getHeight() /1.4){
+   
+     if(avg < 128){
+      
+       pix.setRed(0);
+      
+       pix.setGreen(0);
+     
+        pix.setBlue(2*avg);  
+ 
+       }
+     
+    if(avg >= 128){
+      
+       pix.setRed((2*avg)-255);
+       
+      pix.setGreen((2*avg)-255);
+      
+       pix.setBlue(255); 
+      
+  }
+   
+ }
+  
+  if(pix.getY() > img.getHeight()/1.4 && pix.getY() <= img.getHeight() /1.166){
+   
+     if(avg < 128){
+     
+        pix.setRed(0.8*avg);
+       
+      pix.setGreen(0);
+       
+      pix.setBlue(2*avg);  
+  
+      }
+     
+    if(avg >= 128){
+     
+        pix.setRed((1.2*avg)-51);
+      
+       pix.setGreen((2*avg)-255);
+      
+       pix.setBlue(255); 
+    
+    }
+
+}
+   
+ if(pix.getY() > img.getHeight()/1.166 && pix.getY() <= img.getHeight()){   
+ 
+       if(avg < 128){
+        
+    pix.setRed(1.6*avg);
+     
+       pix.setGreen(0);
+      
+      pix.setBlue(1.6*avg); 
+   
+     }
+    
+     if(avg >= 128){
+     
+       pix.setRed((0.4*avg) +153);
+     
+       pix.setGreen((2*avg)-255);
+      
+      pix.setBlue((0.4*avg) +153); 
+    
+    }
+   
+ }
+
+}
+
+print (img);
