@@ -1,0 +1,30 @@
+h1{
+ text-align: center;
+ color:  indianred;
+ font-family: arial;
+}
+h2{
+  font-family: arial;
+  text-align: center;
+}
+#one{
+ text-align:center;
+}
+#c1{
+  width:350px;
+  border:1px solid black;
+  text-align:center;
+   margin: auto;
+  display: block;
+}
+#p1{
+  font-family:arial;
+  font-size: 25px;
+}
+#two{
+ margin-left: 200px;
+}
+#btn6{
+   margin-left: 360px;
+  margin-top: 40px;
+}
