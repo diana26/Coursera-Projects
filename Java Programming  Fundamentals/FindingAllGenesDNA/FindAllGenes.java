@@ -12,7 +12,7 @@ public class FindAllGenes {
         if(startIndex == -1){ //No ATG
            return "";
         }
-        int stopIndex = dna.indexOf("TAA");
+        int stopIndex = dna.indexOf("TAA", startIndex+3);
         if(stopIndex == -1){ //No TAA
             return "";
         }

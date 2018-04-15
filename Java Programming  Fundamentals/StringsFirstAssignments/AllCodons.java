@@ -44,7 +44,7 @@ public class AllCodons
             else{
                 minIndex = taaIndex;
             }
-            if(minIndex == 1 || (tgaIndex != -1 && tagIndex < minIndex)){
+            if(minIndex == -1 || (tagIndex != -1 && tagIndex < minIndex)){
                 minIndex = tagIndex;
             }
             if(minIndex == -1){
@@ -81,7 +81,7 @@ public class AllCodons
         }
         public void test(){
             testOn("ATGATCTAATTTATGCTGCAACGGTGAAGA");
-            
+            testOn("");
         }
         /*public void testFindStop(){
             String dna = "xxxyyyzzzTAAxxxyyyzzzTAAxx";
