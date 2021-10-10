@@ -13,12 +13,14 @@
     else if ((newX < 0) || (newY < 0)){
       newX = x;
       newY = y;
-    }
+      }
+
     var newPixel = BlurImage.getPixel(newX, newY);
     
     if (Math.random() < 0.5) {
       Blur.setPixel(x, y, pixel);
-    } else {
+    }
+    else {
       Blur.setPixel(x, y, newPixel);
     } 
   }
