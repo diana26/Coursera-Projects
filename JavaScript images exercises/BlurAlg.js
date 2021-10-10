@@ -1,5 +1,3 @@
-
-
   var BlurImage = new SimpleImage ('1.jpg'); 
   var Blur = new SimpleImage(BlurImage.getWidth(), BlurImage.getHeight());
   for (var pixel of BlurImage.values()) {
@@ -22,9 +20,9 @@
       Blur.setPixel(x, y, pixel);
     } else {
       Blur.setPixel(x, y, newPixel);
-    }
-  
+    } 
   }
+
   BlurImage = Blur;
   print (Blur);
 
