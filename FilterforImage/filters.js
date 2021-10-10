@@ -203,33 +203,33 @@ function makeRainbow()
   imgRainbow.drawTo(imgCanvas);
 }
 
-function makeBlur()
-{
-  checkImage(imgBlur);
-  var Blur = new SimpleImage(imgBlur.getWidth(), imgBlur.getHeight());
-  for (var pixel of imgBlur.values()) {
-    var x = pixel.getX();
-    var y = pixel.getY();
-    var newX = x + (Math.floor(Math.random() * 10));
-    var newY = y + (Math.floor(Math.random() * 10));
+    function makeBlur()
+    {
+        checkImage(imgBlur);
+        var Blur = new SimpleImage(imgBlur.getWidth(), imgBlur.getHeight());
+        for (var pixel of imgBlur.values()) {
+            var x = pixel.getX();
+            var y = pixel.getY();
+            var newX = x + (Math.floor(Math.random() * 10));
+            var newY = y + (Math.floor(Math.random() * 10));
     
-    if ((newX > imgBlur.getWidth() -1) || (newY > imgBlur.getHeight() -1 )){
-      newX = x;
-      newY = y;
-    }
-    else if ((newX < 0) || (newY < 0)){
-      newX = x;
-      newY = y;
-    }
-    var newPixel = imgBlur.getPixel(newX, newY);
+            if ((newX > imgBlur.getWidth() -1) || (newY > imgBlur.getHeight() -1 )){
+                newX = x;
+                newY = y;
+            }
+            else if ((newX < 0) || (newY < 0)){
+                newX = x;
+                newY = y;
+            }
+            var newPixel = imgBlur.getPixel(newX, newY);
     
-    if (Math.random() < 0.5) {
-      Blur.setPixel(x, y, pixel);
-    } else {
-      Blur.setPixel(x, y, newPixel);
-    }
-  }
-  var imgCanvas = document.getElementById("c1");
-  imgBlur.drawTo(imgCanvas);
+            if (Math.random() < 0.5) {
+                Blur.setPixel(x, y, pixel);
+            } else {
+                Blur.setPixel(x, y, newPixel);
+            }
+        }
+        var imgCanvas = document.getElementById("c1");
+        imgBlur.drawTo(imgCanvas);
 }
 
