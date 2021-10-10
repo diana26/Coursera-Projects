@@ -39,114 +39,115 @@ function makeGray()
 }
 function makeRed()
 {
-  checkImage(imgRed);
-  for(var pix of imgRed.values())
-  {
-    var x = (pix.getRed() + pix.getBlue() + pix.getGreen()) / 3;
-    if(x < 128)
+    checkImage(imgRed);
+    for(var pix of imgRed.values())
     {
-        var xx = x*2;
-        pix.setRed(xx);
-        pix.setGreen(0);
-        pix.setBlue(0);
+      var x = (pix.getRed() + pix.getBlue() + pix.getGreen()) / 3;
+      if(x < 128)
+      {
+          var xx = x*2;
+          pix.setRed(xx);
+          pix.setGreen(0);
+          pix.setBlue(0);
+      }
+      else 
+      {
+          pix.setRed(255);
+          pix.setGreen(xx - 255);
+          pix.setBlue(xx - 255);
+      }
     }
-    else 
-    {
-        pix.setRed(255);
-        pix.setGreen(xx - 255);
-        pix.setBlue(xx - 255);
-    }
+    var imgCanvas = document.getElementById("c1");
+    imgRed.drawTo(imgCanvas);
   }
- var imgCanvas = document.getElementById("c1");
-  imgRed.drawTo(imgCanvas);
-}
-function makeBlackWhite()
-{
-  checkImage(imgBnW);
-  for(var pix of imgBnW.values())
+  function makeBlackWhite()
   {
-    var x = pix.getRed();
-    var y = pix.getBlue() ;
-    var z = pix.getGreen();
-    if(x >= 127.5 && y<= 127.5 && z<=127.5)
+    checkImage(imgBnW);
+    for(var pix of imgBnW.values())
     {
+      var x = pix.getRed();
+      var y = pix.getBlue() ;
+      var z = pix.getGreen();
+      
+      if(x >= 127.5 && y<= 127.5 && z<=127.5)
+      {
         pix.setRed(255);
         pix.setBlue(255);
         pix.setGreen(255);      
-    }
-    else
-    {
+      }
+      else
+      {
         pix.setRed(0);
         pix.setBlue(0);
         pix.setGreen(0);
+      }
     }
+    var imgCanvas = document.getElementById("c1");
+    imgBnW.drawTo(imgCanvas);
   }
-  var imgCanvas = document.getElementById("c1");
-  imgBnW.drawTo(imgCanvas);
-}
-function resetImage()
-{
-  if(img.complete)
-  {
-    var x = document.getElementById("c1");
-    img.drawTo(x);
-  }
-}
 
-function makeRainbow()
-{
-  checkImage(imgRainbow);
-  for(var pix of imgRainbow.values())
+  function resetImage()
   {
-  
-  var avg = (pix.getRed() + pix.getBlue() + pix.getGreen())/3;
-    if(pix.getY() <= imgRainbow.getHeight()/7)
-    { 
-   	if(avg < 128)
-    {        
-     pix.setRed(2*avg);       
-      pix.setBlue(0);      
-       pix.setGreen(0);
+    if(img.complete)
+    {
+      var x = document.getElementById("c1");
+      img.drawTo(x);
     }
-     if(avg >= 128 )
-     {         
-        pix.setRed(255); 
-                pix.setGreen((1.2*avg)-51); 
-               pix.setBlue((2*avg) - 255);   
-    } 
-   }   
- if (pix.getY() > imgRainbow.getHeight()/7 && pix.getY() <= imgRainbow.getHeight() /3.5)
- {
-       if(avg < 128)
-       {    
-       pix.setRed(2*avg);  
+  }
+
+  function makeRainbow()
+  {
+    checkImage(imgRainbow);
+    for(var pix of imgRainbow.values())
+    {
+      var avg = (pix.getRed() + pix.getBlue() + pix.getGreen())/3;
+      if(pix.getY() <= imgRainbow.getHeight()/7)
+      { 
+   	    if(avg < 128)
+        {        
+          pix.setRed(2*avg);       
+          pix.setBlue(0);      
+          pix.setGreen(0);
+        }
+        if(avg >= 128 )
+        {         
+          pix.setRed(255); 
+          pix.setGreen((1.2*avg)-51); 
+          pix.setBlue((2*avg) - 255);   
+        } 
+      }   
+      if (pix.getY() > imgRainbow.getHeight()/7 && pix.getY() <= imgRainbow.getHeight() /3.5)
+      {
+        if(avg < 128)
+        {    
+          pix.setRed(2*avg);  
           pix.setGreen(0.8*avg);    
-        pix.setBlue(0);      
+          pix.setBlue(0);      
         }      
- if(avg >= 128)
- {    
-      pix.setRed(255);  
-       pix.setGreen((1.2*avg)-51);  
-       pix.setBlue((2*avg)-255);     
- }
-} 
- if(pix.getY() > imgRainbow.getHeight()/3.5 && pix.getY() <= imgRainbow.getHeight() /2.33)
- {
+        if(avg >= 128)
+        {    
+          pix.setRed(255);  
+          pix.setGreen((1.2*avg)-51);  
+          pix.setBlue((2*avg)-255);     
+        }
+      } 
+    if(pix.getY() > imgRainbow.getHeight()/3.5 && pix.getY() <= imgRainbow.getHeight() /2.33)
+    {
       if(avg < 128)
       {      
         pix.setRed(2*avg);      
         pix.setGreen(2*avg);     
         pix.setBlue(0);       
       }       
-  if(avg >= 128)
-  { 
+      if(avg >= 128)
+      { 
          pix.setRed(255);
-           pix.setGreen(255);
-          pix.setBlue((2*avg)-255);  
-  }
- }  
- if(pix.getY() > imgRainbow.getHeight()/2.33 && pix.getY() <= imgRainbow.getHeight() /1.75)
- { 
+         pix.setGreen(255);
+        pix.setBlue((2*avg)-255);  
+      }
+    }  
+  if(pix.getY() > imgRainbow.getHeight()/2.33 && pix.getY() <= imgRainbow.getHeight() /1.75)
+  { 
       if(avg < 128)
       {     
         pix.setRed(0);    
