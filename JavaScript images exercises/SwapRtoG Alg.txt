@@ -17,12 +17,9 @@ function swapGreentoRed (pix)
   return (pix);
 
 }
-
  
-for (var pix of img.values()){
- 
+for (var pix of img.values()){ 
    swapGreentoRed (pix);
-
 }
    
- print (img);
+print (img);
